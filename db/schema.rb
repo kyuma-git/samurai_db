@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 2020_03_20_120214) do
     t.boolean "funded_from_vc"
     t.boolean "is_samurai_member"
     t.integer "source_id"
+    t.integer "stage_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["id", "name", "total_funded_amount", "established_at", "last_funded_at", "funded_from_vc", "is_samurai_member", "source_id", "stage_id"], name: "indexes_for_companies", unique: true
   end
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
