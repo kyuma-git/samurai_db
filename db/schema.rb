@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_190320) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "overview"
     t.date "approved_at"
-    t.integer "comapny_id"
+    t.integer "company_id"
     t.index ["id"], name: "index_patents_on_id", unique: true
   end
 

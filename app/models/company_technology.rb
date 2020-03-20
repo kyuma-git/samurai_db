@@ -2,6 +2,6 @@ class CompanyTechnology < ApplicationRecord
   belongs_to :company
   belongs_to :technology
 
-  validates :company_id
-  validates :technology_id
+  validate :company_id
+  validate :technology_id
 end

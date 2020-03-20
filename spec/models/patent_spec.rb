@@ -10,6 +10,7 @@ RSpec.describe Patent, type: :model do
     end
   end
   describe 'validation' do
+    let(:company) { create(:company) }
     let(:patent) { create(:patent) }
 
     it 'has valid values' do

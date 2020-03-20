@@ -2,6 +2,6 @@ class CompanyKeyword < ApplicationRecord
   belongs_to :company
   belongs_to :keyword
 
-  validates :company_id
-  validates :keyword_id
+  validate :company_id
+  validate :keyword_id
 end
