@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  belongs_to :stage
   belongs_to :source
-  validates :name, uniqueness: true
+
+  validates :name, uniqueness: { case_sensitive: true }
 end

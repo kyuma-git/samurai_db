@@ -1,3 +1,4 @@
 class Stage < ApplicationRecord
-  validates :name, uniqueness: true
+  has_many :companies
+  validates :name, uniqueness: { case_sensitive: true }
 end
