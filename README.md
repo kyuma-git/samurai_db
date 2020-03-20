@@ -1,25 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+サムライデータベース開発者向けの情報
 
 * Ruby version
+`2.5.5`
 
-* System dependencies
+* Rails version
+`6.0.2.2`
 
-* Configuration
+* Database
+`Mysql@5.7`
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+`bundle exec rails db:create`
 
 * ...
 # samurai_db
