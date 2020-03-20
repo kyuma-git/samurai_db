@@ -1,0 +1,17 @@
+[
+  {id: 1, name: 'AI'},
+  {id: 2, name: 'ブロックチェーン'},
+  {id: 3, name: 'AR'},
+  {id: 4, name: 'VR'},
+  {id: 5, name: 'IOT'},
+  {id: 6, name: '5G'},
+  {id: 7, name: 'RPA'},
+  {id: 8, name: 'エッジコンピューティング'},
+  {id: 9, name: 'クラウドコンピューティング'},
+  {id: 10, name: 'サイバーセキュリティ'},
+  {id: 11, name: 'ドローン'},
+  {id: 12, name: '3Dプリンティング'},
+  {id: 13, name: '生体認証'},
+  {id: 14, name: '人間強化'},
+  {id: 15, name: 'トレーサビリティ'},
+].each { |s| Technology.seed(s) }

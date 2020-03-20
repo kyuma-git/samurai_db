@@ -1,0 +1,17 @@
+[
+  {id: 1, name: 'ソフトウェア'},
+  {id: 2, name: 'ヘルスケア'},
+  {id: 3, name: 'Fintech'},
+  {id: 4, name: 'Agritech'},
+  {id: 5, name: 'Contech'},
+  {id: 6, name: 'ハードウェア'},
+  {id: 7, name: '物流'},
+  {id: 8, name: '環境関連'},
+  {id: 9, name: 'エネルギー'},
+  {id: 10, name: '医療'},
+  {id: 11, name: '半導体'},
+  {id: 12, name: '不動産'},
+  {id: 13, name: 'Maas'},
+  {id: 14, name: 'セキュリティー'},
+  {id: 15, name: 'Deeptech'},
+].each { |s| Industry.seed(s) }
