@@ -23,9 +23,12 @@ gem 'seed-fu'
 
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
   gem 'rspec-rails'
   gem "factory_bot_rails"
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'rb-readline'
 end
 
 group :development do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_190320) do
+ActiveRecord::Schema.define(version: 2020_03_21_102648) do
 
   create_table "awards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_190320) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
-    t.string "overview"
+    t.text "overview"
     t.string "website_url"
     t.integer "total_funded_amount"
     t.date "established_at"
