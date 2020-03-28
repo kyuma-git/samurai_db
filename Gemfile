@@ -21,7 +21,6 @@ gem 'seed-fu'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
