@@ -4,25 +4,29 @@
     <div class="jumbotron">
     <%= search_form_for @c do |f| %>
       <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <%= f.label :name_or_overview_cont %>
-          <%= f.search_field :name_or_overview_cont %>
+        <div class="col-8 offset-2">
+          <%= f.search_field :name_or_overview_cont, :class => 'form-control form-control-md', :placeholder => '企業名、事業内容、キーワードを入力' %>
         </div>
-        <div class="col-md-4 mb-3">
-          <%= f.label :country_id_eq %>
-          <%= f.collection_select :country_id_eq, @country, :id, :name, :include_blank => '指定なし' %>
-        </div>
-        <div class="col-md-4 mb-3">
-          <%= f.label :stage_id_eq %>
-          <%= f.collection_select :stage_id_eq, @stages, :id, :name, :include_blank => '指定なし' %>
-        </div>
-        <div class="col-md-4 mb-3">
-          <%= f.label :industries_id_eq %>
-          <%= f.collection_select :industries_id_eq, @industries, :id, :name, :include_blank => '指定なし' %>
-        </div>
-        <%= sort_link(@c, :total_funded_amount, [:total_funded_amount, 'total_funded_amount asc'], '総調達額で並べる') %>
       </div>
-      <%= f.submit %>
+      <div class="form-row">
+        <div class="col-5 mt-4 text-center">
+          <%= f.collection_select :industries_id_eq, @industries, :id, :name, :include_blank => '業界' %>
+        </div>
+        <div class="col-2 mt-4">
+          <%= f.collection_select :country_id_eq, @country, :id, :name, :include_blank => '国' %>
+        </div>
+        <div class="col-2 mt-4">
+          <%= f.collection_select :stage_id_eq, @stages, :id, :name, :include_blank => 'ステージ' %>
+        </div>
+        <div class="col-3 mt-4">
+          <%= f.collection_select :technologies_id_eq, @technologies, :id, :name, :include_blank => '技術分野' %>
+        </div>
+      </div>
+      <div class="form-row mt-5 text-center">
+        <div class="col-4 offset-4">
+          <%= f.submit :class => 'btn btn-secondary' %>
+        </div>
+      </div>
     <% end %>
     </div>
     <p>
@@ -38,21 +42,31 @@
             <th style="background-color: #F2F2F2;">国</th>
             <th style="background-color: #F2F2F2;">業種</th>
             <th style="background-color: #F2F2F2;">ステージ</th>
-            <th style="background-color: #F2F2F2;">総調達額</th>
+            <th style="background-color: #F2F2F2;">
+              <%= sort_link(@c, :total_funded_amount, [:total_funded_amount, 'total_funded_amount asc'], '総調達額') %>
+            </th>
             <th style="background-color: #F2F2F2;">最終調達日</th>
+            <th style="background-color: #F2F2F2;"></th>
           </tr>
         </thead>
         <tbody>
           <% @companies.each do |c| %>
             <tr style="border-bottom: 1px solid gray">
               <td>
-                <%= link_to "#{ c.name }", "#{ c.website_url }", target: "_blank" %>
+                <%= link_to "#{c.name}", company_path(c) %>
               </td>
-              <td><%= c.country&.name %></td>
+              <td>
+                <%= c.country&.name %>
+              </td>
               <td><%= c.industries[0]&.name %></td>
               <td><%= c.stage&.name %></td>
               <td><%= c&.total_funded_amount %>千万円</td>
               <td><%= c&.last_funded_at %></td>
+              <td>
+                <a href="<%= c.website_url %>" target="_blank">
+                  <span data-feather="external-link"></span>
+                </a>
+              </td>
             </tr>
           <% end %>
         </tbody>
