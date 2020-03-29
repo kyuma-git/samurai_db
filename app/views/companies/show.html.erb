@@ -1,2 +1,36 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+<div class="jumbotron" style="background-color:transparent !important;">
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <h2><%= @company.name %></h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-sm">
+        <tr style="width:100%">
+          <td style="width:20%">業種</td>
+          <td style="width:80%">
+            <%= @company.industries[0]&.name %>
+            <%= @company.industries[1]&.name %>
+          </td>
+        </tr>
+        <tr>
+          <td>概要</td>
+          <td><%= @company&.overview %></td>
+        </tr>
+        <tr>
+          <td>総調達額</td>
+          <td><%= @company&.total_funded_amount %>千万円</td>
+        </tr>
+        <tr>
+          <td>最終調達時期</td>
+          <td><%= @company&.last_funded_at %></td>
+        </tr>
+        <tr>
+          <td>ウェブサイト</td>
+          <td>
+            <a href="<%= @company.website_url %>" target="_blank">
+              <%= @company.website_url %>
+            </a>
+          </td>
+        </tr>
+    </table>
+  </div>
+</main>
+</div>
